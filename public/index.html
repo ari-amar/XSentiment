@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XSentiment - Twitter Sentiment Analyzer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>XSentiment</h1>
+      <p>Analyze X (Twitter) sentiment on any topic</p>
+    </header>
+
+    <main>
+      <div class="search-box">
+        <input
+          type="text"
+          id="topicInput"
+          placeholder="Enter a topic to analyze (e.g., climate change, AI, coffee)"
+          autofocus
+        >
+        <button id="analyzeBtn">Analyze Sentiment</button>
+      </div>
+
+      <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+        <p>Analyzing tweets...</p>
+      </div>
+
+      <div id="error" class="error hidden"></div>
+
+      <div id="results" class="results hidden">
+        <div class="summary">
+          <h2>Results for: <span id="resultTopic"></span></h2>
+          <div class="stats">
+            <div class="stat-card">
+              <h3>Total Tweets</h3>
+              <p id="totalTweets" class="stat-value">0</p>
+            </div>
+            <div class="stat-card">
+              <h3>Overall Sentiment</h3>
+              <p id="overallSentiment" class="stat-value sentiment-badge">Neutral</p>
+            </div>
+            <div class="stat-card">
+              <h3>Sentiment Score</h3>
+              <p id="sentimentScore" class="stat-value">0.0</p>
+            </div>
+          </div>
+
+          <div class="breakdown">
+            <h3>Sentiment Breakdown</h3>
+            <div class="breakdown-bars">
+              <div class="bar-item">
+                <label>Positive <span id="positivePercent">0%</span></label>
+                <div class="bar">
+                  <div id="positiveBar" class="bar-fill positive" style="width: 0%"></div>
+                </div>
+              </div>
+              <div class="bar-item">
+                <label>Neutral <span id="neutralPercent">0%</span></label>
+                <div class="bar">
+                  <div id="neutralBar" class="bar-fill neutral" style="width: 0%"></div>
+                </div>
+              </div>
+              <div class="bar-item">
+                <label>Negative <span id="negativePercent">0%</span></label>
+                <div class="bar">
+                  <div id="negativeBar" class="bar-fill negative" style="width: 0%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tweets-section">
+          <h3>Recent Tweets</h3>
+          <div id="tweetsList"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
