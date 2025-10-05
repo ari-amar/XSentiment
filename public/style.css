@@ -111,6 +111,15 @@ main {
   margin-bottom: 20px;
 }
 
+.info {
+  background: #fff3cd;
+  color: #856404;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border-left: 4px solid #ffc107;
+}
+
 .results h2 {
   color: #333;
   margin-bottom: 20px;

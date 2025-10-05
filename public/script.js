@@ -48,6 +48,20 @@ async function analyzeSentiment() {
 }
 
 function displayResults(data) {
+  // Show info message if using mock data
+  if (data.usingMockData && data.message) {
+    const infoMsg = document.getElementById('infoMessage');
+    if (infoMsg) {
+      infoMsg.textContent = data.message;
+      infoMsg.classList.remove('hidden');
+    }
+  } else {
+    const infoMsg = document.getElementById('infoMessage');
+    if (infoMsg) {
+      infoMsg.classList.add('hidden');
+    }
+  }
+
   // Update summary
   document.getElementById('resultTopic').textContent = data.topic;
   document.getElementById('totalTweets').textContent = data.totalTweets;
