@@ -1,6 +1,7 @@
 # XSentiment
 
 A web application that analyzes sentiment on X (Twitter) for any given topic.
+The core algorithm is: text → word scores → sum → categorize → aggregate → percentages
 
 ## Features
 
